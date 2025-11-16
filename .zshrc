@@ -9,6 +9,21 @@ setopt histignorealldups
 autoload -Uz compinit
 compinit
 
+# ====== HHKB / vi 風カーソル移動（Ctrl+H/J/K/L） ======
+# Ctrl+H → 左
+bindkey '^H' backward-char
+# Ctrl+J → 下（次の履歴 / 次の行）
+bindkey '^J' down-line-or-history
+# Ctrl+K → 上（前の履歴 / 前の行）
+bindkey '^K' up-line-or-history
+# Ctrl+L → 右
+bindkey '^L' forward-char
+
+# ====== HHKB Delete キー (Fn+~) を Delete として認識させる ======
+bindkey '\e[3~' delete-char
+bindkey -M viins '\e[3~' delete-char
+bindkey -M vicmd '\e[3~' delete-char
+
 # #zsh で「最強の快適さ」を作るための “推奨3つセット
 # ====== autosuggestions（過去履歴の薄い文字） ======
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#777777'
