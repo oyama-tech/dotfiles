@@ -28,6 +28,8 @@ end
 -- Visual モードで選択 → y でそのまま Web に貼りたい
 vim.opt.clipboard = "unnamedplus"
 
+vim.opt.fileformats = { "unix", "dos" }  -- 読み込み・貼り付け時に unix / dos 両方判定
+vim.opt.fileformat = "unix"              -- 保存時は必ず LF (Linux形式)
 
 require "lazy_setup"
 require "polish"
