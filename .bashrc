@@ -1,0 +1,50 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# alias ls='ls --color=auto'
+# 
+# # Arch latest news
+# if [ "$PS1" ] && [[ $(ping -c1 www.google.com 2>&-) ]]; then
+# 	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
+# 	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g') | \
+# 		sed -e 's/&amp;/\&/g
+# 		s/&lt;\|&#60;/</g
+# 		s/&gt;\|&#62;/>/g
+# 		s/<\/a>/£/g
+# 		s/href\=\"/§/g
+# 		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
+# 		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
+# 		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
+# 		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
+# 		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
+# 		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
+# 		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
+# 		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
+# 		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
+# 		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
+# 		s/<!\[CDATA\[\|\]\]>//g
+# 		s/\|>\s*<//g
+# 		s/ *<[^>]\+> */ /g
+# 		s/[<>£§]//g')\n\n";
+# fi
+alias ls="ls --color=auto"
+# export LS_COLORS="di=01;36"
+
+# PS1="$(if [[ ${EUID} == 0 ]]; then echo '\[\033[00;31m\]\h'; else echo '\[\033[00;32m\]\u@\h'; fi)\[\033[00;34m\] \w \$([[ \$? != 0 ]] && echo \"\[\033[01;31m\]:(\[\033[01;34m\] \")\\$\[\033[00m\] "
+PS1="\[\e[$((EUID==0?31:32))m\]\u@\h \[\e[96m\]\w\[\e[0m\] \$ "
+
+alias subl='env GDK_BACKEND=x11 subl'
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+alias h='history'
+
+# Environment Variables
+export EDITOR=vim     # or nvim
+export VISUAL=vim
+
+
+source /home/hiroki/.config/broot/launcher/bash/br
