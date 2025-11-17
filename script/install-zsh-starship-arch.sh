@@ -4,7 +4,7 @@ set -e
 echo "=== Arch Linux: zsh + starship インストール ==="
 
 # ---- 必要パッケージ ----
-sudo pacman -Sy --noconfirm zsh starship eza
+sudo pacman -Sy --noconfirm zsh starship eza fzf
 
 # ---- ~/.zshrc に starship 初期化を追加（重複しないようチェック）----
 if ! grep -q 'starship init zsh' "$HOME/.zshrc" 2>/dev/null; then
