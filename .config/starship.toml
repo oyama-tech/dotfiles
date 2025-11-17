@@ -22,7 +22,7 @@ add_newline = false
 # $nodejs$python$rust$golang$docker_context
 # $character
 # """
-format = "\n╭─ $username$hostname$directory$git_branch$git_status$nodejs$python$rust$golang$docker_context\n╰──$character"
+format = "\n[╭─](fg:#666666) $username$hostname$directory$git_branch$git_status$nodejs$python$rust$golang$docker_context\n[╰──](fg:#666666)$character"
 
 # ===== Hostname（PC名）を表示 =====
 [hostname]
