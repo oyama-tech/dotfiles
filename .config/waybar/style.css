@@ -1,0 +1,99 @@
+/* ===============================
+   Global
+   =============================== */
+
+* {
+  /* アイコン表示のため Nerd Font を含める */
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans CJK JP", monospace;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(25, 25, 25, 0.5);
+  color: #ffffff;
+
+  /* バー全体の余白 */
+  padding: 2px 6px;
+}
+
+/* ===============================
+   Workspaces
+   =============================== */
+
+#workspaces button {
+  padding: 0 8px;
+}
+
+#workspaces button.active {
+  border-bottom: 2px solid white;
+}
+
+/* ===============================
+   Window title
+   =============================== */
+
+#window {
+  padding-left: 10px;
+}
+
+/* ===============================
+   Standard modules (right side)
+   =============================== */
+
+#clock,
+#tray,
+#pulseaudio,
+#input-method {
+  padding: 0 10px;
+}
+
+#input-method {
+  font-weight: bold;
+}
+
+/* ===============================
+   Custom app icons (RIGHT)
+   =============================== */
+
+/* custom モジュールのIDは #custom-<name> */
+#custom-browser,
+#custom-obsidian,
+#custom-terminal,
+#custom-files,
+#custom-power {
+  /* アイコン同士の間隔 */
+  padding: 4px 10px;   /* 縦方向も少し確保して押しやすく */
+  margin: 0 4px;
+
+  border-radius: 8px;
+  font-size: 16px;
+
+  /* 高さが揃わない環境向け（line-heightは使わない） */
+  min-height: 24px;
+}
+
+/* hover / active */
+#custom-browser:hover,
+#custom-obsidian:hover,
+#custom-terminal:hover,
+#custom-files:hover,
+#custom-power:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#custom-browser:active,
+#custom-obsidian:active,
+#custom-terminal:active,
+#custom-files:active,
+#custom-power:active {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+/* ===============================
+   Right modules container
+   =============================== */
+
+.modules-right {
+  margin-right: 4px;
+}
+

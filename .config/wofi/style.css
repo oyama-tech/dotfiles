@@ -1,0 +1,41 @@
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+/* ウィンドウ全体 */
+/* window { */
+/*     background-color: #1e1e2e; */
+/*     border: 2px solid #89b4fa; */
+/*     border-radius: 10px; */
+/* } */
+window {
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 2px solid #89b4fa;
+    border-radius: 12px;
+}
+
+/* 入力欄 */
+#input {
+    margin: 8px;
+    padding: 6px;
+    border-radius: 6px;
+    border: none;
+    background-color: #313244;
+    color: #cdd6f4;
+}
+
+/* エントリ */
+#entry {
+    padding: 6px 10px;
+    margin: 2px 6px;
+    border-radius: 6px;
+    color: #cdd6f4;
+}
+
+/* 選択中 */
+#entry:selected {
+    background-color: #45475a;
+    color: #f5e0dc;
+}
+

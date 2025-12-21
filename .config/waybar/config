@@ -1,0 +1,110 @@
+{
+  "output": "HDMI-A-1",
+
+  "layer": "top",
+  "position": "top",
+
+  "modules-left": [
+    "hyprland/workspaces",
+    "custom/terminal",
+    "custom/files",
+    "custom/browser",
+    "custom/obsidian",
+    "hyprland/window"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "mpris",
+    "network",
+    "pulseaudio",
+    "tray",
+    "input-method"
+  ],
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4, 5]
+    }
+  },
+
+  "custom/browser": {
+    "format": "",
+    "tooltip": "Browser",
+    "on-click": "google-chrome-stable"
+  },
+
+  "custom/obsidian": {
+    "format": "◆",
+    "tooltip": "Obsidian",
+    "on-click": "obsidian"
+  },
+
+  "custom/terminal": {
+    "format": "",
+    "tooltip": "Terminal",
+    "on-click": "ghostty"
+  },
+
+  "custom/files": {
+    "format": "",
+    "tooltip": "Files",
+    "on-click": "nautilus"
+  },
+
+  "clock": {
+    "format": "{:%Y-%m-%d %H:%M}",
+    "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<tt>{calendar}</tt>"
+  },
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋎",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "scroll-step": 2
+  },
+
+  "network": {
+    "format-ethernet": "󰈀 {ipaddr}",
+    "format-wifi": "󰖩 {signalStrength}% {ipaddr}",
+    "format-disconnected": "󰖪 disconnected",
+    "tooltip-format": "{ifname}\nIP: {ipaddr}\nGW: {gwaddr}\n{essid} {signalStrength}%"
+  },
+
+  "mpris": {
+    "format": "󰎆 {player_icon} {title}",
+    "format-paused": "󰎊 {player_icon} {title}",
+    "player-icons": {
+      "firefox": "󰈹",
+      "spotify": "󰓇",
+      "mpv": "󰐹",
+      "default": ""
+    },
+    "max-length": 40
+  },
+
+  "input-method": {
+    "format": "{icon} {name}",
+    "format-icons": {
+      "en": "A",
+      "jp": "あ",
+      "mozc": "あ",
+      "default": "⌨"
+    },
+    "tooltip": true,
+    "tooltip-format": "Input Method: {name}",
+    "on-click": "fcitx5-configtool"
+  }
+}
+
