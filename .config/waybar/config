@@ -1,5 +1,5 @@
 {
-  "output": "HDMI-A-1",
+  "output": ["HDMI-A-1"],
 
   "layer": "top",
   "position": "top",
@@ -22,7 +22,8 @@
     "network",
     "pulseaudio",
     "tray",
-    "input-method"
+    "input-method",
+    "custom/power"
   ],
 
   "hyprland/workspaces": {
@@ -55,7 +56,7 @@
   "custom/files": {
     "format": "",
     "tooltip": "Files",
-    "on-click": "nautilus"
+    "on-click": "dolphin"
   },
 
   "clock": {
@@ -105,6 +106,13 @@
     "tooltip": true,
     "tooltip-format": "Input Method: {name}",
     "on-click": "fcitx5-configtool"
+  },
+
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/powermenu.sh"
   }
+
 }
 
