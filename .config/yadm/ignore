@@ -1,0 +1,7 @@
+.cache/
+.cache/yay/
+.config/google-chrome/
+.config/chromium/
+.local/share/Trash/
+*.log
+
