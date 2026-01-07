@@ -46,5 +46,3 @@ alias h='history'
 export EDITOR=vim     # or nvim
 export VISUAL=vim
 
-
-source /home/hiroki/.config/broot/launcher/bash/br
