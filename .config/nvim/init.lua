@@ -23,13 +23,20 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
--- 絶対にあったほうが便利
--- キーボードだけで Web ↔ nvim のコピペをしたい
--- Visual モードで選択 → y でそのまま Web に貼りたい
-vim.opt.clipboard = "unnamedplus"
+
 
 vim.opt.fileformats = { "unix", "dos" }  -- 読み込み・貼り付け時に unix / dos 両方判定
 vim.opt.fileformat = "unix"              -- 保存時は必ず LF (Linux形式)
 
 require "lazy_setup"
 require "polish"
+
+-- vs code  上で 1行目だけ黒く塗りつぶされて見えない現象(VS code 側)
+if vim.g.vscode then
+  -- VS Code 側が clipboard を完全に管理するので何もしない
+  astronvim.default_colorscheme = false
+else
+  -- ターミナル nvim 用
+  vim.opt.clipboard = "unnamedplus"
+end
+

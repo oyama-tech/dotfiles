@@ -61,6 +61,32 @@ alias ls="eza --group --icons --color=auto --time-style=long-iso"
 alias ll="eza -l --group --icons --color=auto --time-style=long-iso"
 alias la="eza -la --group --icons --color=auto --time-style=long-iso"
 
+# --- EDITOR setting ------
+export EDITOR=nvim
+
+# --- yazi setting --------
+alias y="yazi"
+
+function yy() {
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+
+    yazi "$@" --cwd-file="$tmp"
+
+    if cwd="$(cat "$tmp")" && [ -n "$cwd" ]; then
+        cd "$cwd"
+    fi
+
+    rm -f "$tmp"
+}
+
+# --- zoxide setting ---------------------
+eval "$(zoxide init zsh)"
+
 # ====== プロンプト ======
 # export PROMPT="%n@%m %~ %# "
 eval "$(starship init zsh)"
+
+# fzf key binding ------------------------
+# export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
